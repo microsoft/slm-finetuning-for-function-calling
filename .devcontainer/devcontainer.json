@@ -1,0 +1,20 @@
+{
+	"name": "ai-learning-day-3-lab",
+	"context": ".",
+	"dockerFile": "Dockerfile",
+	"customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+		"ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-ai",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+
+  "runArgs": ["-v", "/var/run/docker.sock:/var/run/docker.sock"],
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}

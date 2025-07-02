@@ -1,33 +1,44 @@
-# Project
+# SLM fine-tuning & evaluation labs
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository contains labs for [finetuning](finetuning/README.md) and [evaluating](evaluation/README.md) Small Language Models (SLMs) developed for the AI Learning day at Microsoft (March for EMEA and April for Americas). The labs are designed to be interactive with various levels of depths so that audience with various backgrounds and experience levels, from beginners to advanced users can learn and understand the concepts with little to no guidance.
 
-As the maintainer of this project, please make a few updates:
+## Key Points Covered
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- Small Language Models (SLMs)
+- Function Calling
+- Data Preparation
+- Tokenization
+- Model Configuration
+- Fine-Tuning
+- Evaluation Metrics for SLMs
+- Error Analysis
 
-## Contributing
+## Pre-requisites
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+Some familiarity with the following will help:
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+- Python
+- Jupyter notebooks, though we will be using them in VS Code which is much simpler :)
+- A conceptual understanding of large language models (LLM) and Machine Learning Basics (training, validation, and evaluation)
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## Environment setup
 
-## Trademarks
+You have 3 options for environment setup using Notebooks. Please choose the one which suits you best.
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+1. [**Github CodeSpaces**](docs/env-setup-codespaces.md) - a purely cloud-based environment.  This should be your go-to option if you do NOT have a linux environment (OSX or WSL2/Windows).
+
+2. [**Run code on a remote VM**](docs/env-setup-remote-vm.md) - run the code from VS Code. Ideal if you need some beefy processing, and have access to a high-performance Azure VM.
+
+3. **Run on your laptop** - if you have plenty of RAM and maybe wish to test the performance of inference & fine-tuning on your local machine.  You have two options:
+
+    a. [With a Dev Container](docs/env-setup-devcontainer.md) OR
+
+    b. [Create your own virtualenv](docs/env-setup-local.md) - if you are comfortable with creating a Python environment on your local machine.
+
+## Accessing the labs
+
+This repo contains two labs:
+
+1. [SLM finetuning](finetuning/README.md) - everything from running an SLM for the first time, to inference, finetuning & performance-tuning.
+
+2. [Evaluation lab](evaluation/README.md) - building on the 'SLM finetuning' lab, we focus on the important aspect of Evaluation.

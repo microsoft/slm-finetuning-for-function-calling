@@ -1,0 +1,13 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "editor.defaultFormatter": "ms-python.python",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "notebook.codeActionsOnSave": {
+        // "source.fixAll": "explicit",
+        // "source.unusedImports": "never",
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+}

@@ -1,0 +1,59 @@
+model_kwargs:
+  use_cache: False
+  trust_remote_code: True
+  torch_dtype: bfloat16
+  attn_implementation: eager
+  # quantization_config:
+  #   load_in_4bit: True
+  #   bnb_4bit_quant_type: nf4
+  #   bnb_4bit_compute_dtype: bfloat16
+  #   bnb_4bit_use_double_quant: True
+
+training_config:
+  bf16: True
+  do_eval: True
+  eval_steps: 1
+  eval_strategy: steps
+  gradient_checkpointing: True
+  gradient_checkpointing_kwargs:
+    use_reentrant: False
+  gradient_accumulation_steps: 4
+  learning_rate: 2.5e-5
+  load_best_model_at_end: True
+  log_level: warning
+  logging_steps: 1
+  logging_strategy: steps
+  lr_scheduler_type: cosine
+  max_steps: -1
+  num_train_epochs: 5
+  output_dir: ./models/checkpoint_dir
+  overwrite_output_dir: True
+  per_device_eval_batch_size: 8
+  per_device_train_batch_size: 8
+  remove_unused_columns: True
+  report_to: none
+  save_steps: 10
+  seed: 0
+  warmup_ratio: 0.2
+
+final_model_dir: ./models/fine_tuned_adapter
+
+peft_config:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: none # important that this is parsed as string "none"
+  task_type: CAUSAL_LM
+  target_modules: all-linear
+  modules_to_save:
+    null
+    # - embed_tokens
+
+train_on_completion_only: True
+response_template: <|assistant|> # refer to the chat template in tokenization_config.json
+
+# Only get the first X samples of each dataset. This is useful for debugging.
+data:
+  truncate_train_dataset: null
+  truncate_test_dataset: null
+# Experimenter notes

@@ -1,0 +1,99 @@
+[{
+    "type": "function",
+    "function": {
+        "name": "set_volume",
+        "description": "Adjust the volume level of the car's radio system.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "volume_level": {
+                    "type": "integer",
+                    "description": "The desired volume level, between 0 (muted) and 100 (maximum)."
+                }
+            },
+            "required": [
+                "volume_level"
+            ]
+        }
+    }
+},
+{
+    "type": "function",
+    "function": {
+        "name": "adjust_volume",
+        "description": "Adjust the volume level of the car's radio system.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "volumen_increment": {
+                    "type": "integer",
+                    "description": "The increment by which to increase or decrease the volume. Positive values increase the volume, and negative values decrease it."
+                }
+            },
+            "required": [
+                "volumen_increment"
+            ]
+        }
+    }
+},
+{
+    "type": "function",
+    "function": {
+        "name": "toggle_radio",
+        "description": "Turn the car radio on or off.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "state": {
+                    "type": "string",
+                    "description": "The state of the radio. Can be 'on' to turn the radio on or 'off' to turn it off.",
+                    "enum": ["on", "off"]
+                }
+            },
+            "required": [
+                "state"
+            ]
+        }
+    }
+},
+{
+    "type": "function",
+    "function": {
+        "name": "toggle_mute_radio",
+        "description": "Mute or unmute the car's radio based on the given state.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "state": {
+                    "type": "string",
+                    "description": "The state of the radio. Can be 'mute' to mute the radio or 'unmute' to unmute it.",
+                    "enum": ["mute", "unmute"]
+                }
+            },
+            "required": [
+                "state"
+            ]
+        }
+    }
+},
+{
+    "type": "function",
+    "function": {
+        "name": "change_radio_station",
+        "description": "Change the car's radio to one of the available stations.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "station": {
+                    "type": "string",
+                    "description": "The radio station to tune to. Available options are 'radio1', 'radio2', 'radio3', and 'radio4'.",
+                    "enum": ["radio1", "radio2", "radio3", "radio4"]
+                }
+            },
+            "required": [
+                "station"
+            ]
+        }
+    }
+}
+]
